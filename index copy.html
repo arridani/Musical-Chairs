@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="http://connect.soundcloud.com/sdk.js"></script>
+</head>
+<body>
+
+<script>
+    SC.initialize({
+        client_id: '5ccf310c79bf3cbbc9172cad9bf0373b'
+    });
+    // find all tracks with the genre 'punk' that have a tempo greater than 120 bpm.
+    SC.get('/tracks', { genres: 'punk', bpm: { from: 120 } }, function(tracks) {
+        console.log(tracks);
+    });
+</script>
+</body>
+</html>

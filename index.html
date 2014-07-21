@@ -1,0 +1,42 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+    <TITLE> Musical Chairs!!!! </TITLE>
+    <META NAME="Generator" CONTENT="EditPlus">
+    <META NAME="Author" CONTENT="D.A.N.">
+    <META NAME="Keywords" CONTENT="">
+    <META NAME="Description" CONTENT="">
+    <script>
+        function CountDown(time)
+        {
+            var reverse = 0;
+            for(i = time; i > -1; i--)
+            {
+                setTimeout("UpdateUI(" + i + ")", reverse * 1000);
+                reverse = reverse + 1;
+            }
+        }
+        function UpdateUI(time)
+        {
+            var timer = document.getElementById('test');
+            /*timer.innerHTML = time + "<br/>";*/
+            if(time == 0)
+            {
+                timer.innerHTML = "<input type=\"submit\" value=\"Submit\" />";
+            }
+            else
+            {
+                timer.innerHTML = time + "<br/>";
+            }
+        }
+    </script>
+</HEAD>
+
+<BODY>
+
+<input type="button" onClick="CountDown(rangeCount(20,40));" />
+
+<div id="test">Start</div>
+
+</BODY>
+</HTML>
